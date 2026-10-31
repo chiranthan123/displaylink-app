@@ -3,31 +3,72 @@ name: Android APK Build
 on:
   push:
     branches: [ "main", "master" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
+    name: Build & Package DisplayLink APK
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
 
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@v4
-      with:
-        gradle-version: 8.9
+      - name: Set up Android SDK (API 35)
+        uses: android-actions/setup-android@v3
+        with:
+          packages: 'platforms;android-35 build-tools;35.0.0 platform-tools'
 
-    - name: Compile the APK
-      run: gradle assembleDebug
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
 
-    - name: Upload the compiled APK
-      uses: actions/upload-artifact@v4
-      with:
-        name: displaylink-app
-        path: app/build/outputs/apk/debug/app-debug.apk
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Prepare APK for distribution
+        run: |
+          cp app/build/outputs/apk/debug/app-debug.apk DisplayLink.apk
+          ls -la DisplayLink.apk
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: DisplayLink-APK
+          path: DisplayLink.apk
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        continue-on-error: true
+        with:
+          tag_name: v1.0.0
+          name: "DisplayLink v1.0.0 - Android APK"
+          body: |
+            ### DisplayLink Android Client (AOA Mode)
+
+            Automated debug APK build for DisplayLink low-latency USB secondary monitor.
+
+            #### How to Install on your Phone:
+            1. Download **`DisplayLink.apk`** below directly on your Android phone.
+            2. Tap the file to install (allow "Install from Unknown Sources" if prompted).
+            3. Open the **DisplayLink** app on your phone.
+            4. Connect your phone to the PC via USB.
+            5. Run the streamer on your PC:
+               ```bash
+               python host_streamer.py --aoa
+               ```
+            6. Tap **OK** on your phone when prompted to allow the USB accessory connection.
+          files: DisplayLink.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
