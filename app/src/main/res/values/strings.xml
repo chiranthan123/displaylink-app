@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">DisplayLink</string>
+    <string name="status_awaiting_connection">Awaiting USB Connection</string>
+    <string name="status_connected">Display Connected</string>
+    <string name="status_subtitle">Plug in a DisplayLink compatible adapter, dock, or monitor to begin mirroring</string>
+    <string name="instruction_step_1_title">Connect USB Cable</string>
+    <string name="instruction_step_1_desc">Attach the USB-C or USB-A OTG adapter firmly to this Android device.</string>
+    <string name="instruction_step_2_title">Connect External Display</string>
+    <string name="instruction_step_2_desc">Link your monitor or projector via HDMI or DisplayPort through your dock.</string>
+    <string name="instruction_step_3_title">Power On Hardware</string>
+    <string name="instruction_step_3_desc">Ensure your external display is powered on and set to the correct input source.</string>
+    <string name="settings_title">DisplayLink Settings</string>
+    <string name="settings_low_latency">Low Latency Mode</string>
+    <string name="settings_keep_screen_on">Keep Screen Awake</string>
+    <string name="settings_auto_rotate">Auto Rotate Mirroring</string>
+    <string name="settings_about">DisplayLink Android v1.0.0 (UI Prototype)</string>
+</resources>
+

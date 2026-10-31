@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Filter for DisplayLink certified docks and adapters -->
+    <usb-accessory
+        manufacturer="DisplayLink"
+        model="DisplayLink Dock"
+        version="1.0" />
+    <usb-accessory
+        manufacturer="DisplayLink" />
+    <!-- Generic AOA accessory fallback for test benches and compatible docks -->
+    <usb-accessory />
+</resources>
+
