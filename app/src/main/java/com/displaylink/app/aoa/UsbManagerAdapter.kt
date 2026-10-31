@@ -24,8 +24,8 @@ interface UsbAccessoryWrapper {
 class RealUsbAccessory(override val rawAccessory: UsbAccessory) : UsbAccessoryWrapper {
     override val manufacturer: String get() = rawAccessory.manufacturer
     override val model: String get() = rawAccessory.model
-    override val description: String get() = rawAccessory.description
-    override val version: String get() = rawAccessory.version
+    override val description: String get() = rawAccessory.description ?: ""
+    override val version: String get() = rawAccessory.version ?: ""
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

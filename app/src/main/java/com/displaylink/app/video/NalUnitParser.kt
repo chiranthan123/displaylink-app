@@ -66,7 +66,7 @@ class NalUnitParser {
 
         while (true) {
             val firstStartCode = findStartCode(buffer, searchIndex, bufferLength)
-            if (firstStartCode == -1) {
+            if (firstStartCode == null) {
                 // Keep the trailing potential start code prefix bytes (up to 3 bytes)
                 val retainCount = minOf(bufferLength, 3)
                 if (retainCount > 0 && bufferLength > retainCount) {
@@ -78,7 +78,7 @@ class NalUnitParser {
 
             // Find the next start code to delineate the boundary of this NAL unit
             val nextStartCode = findStartCode(buffer, firstStartCode.index + firstStartCode.length, bufferLength)
-            if (nextStartCode == -1) {
+            if (nextStartCode == null) {
                 // NAL unit is not yet complete; wait for the next chunk read
                 if (firstStartCode.index > 0) {
                     val remaining = bufferLength - firstStartCode.index
