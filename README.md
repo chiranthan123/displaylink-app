@@ -6,6 +6,27 @@ A complete, high-performance display mirroring solution comprising:
 
 ---
 
+## 📱 Downloading & Installing the Android APK
+
+A pre-built, ready-to-run APK is compiled and published automatically via GitHub Actions CI/CD:
+
+1. **Direct Download**:
+   - Download the APK directly onto your Android phone: **[Download DisplayLink.apk (v1.0.0)](https://github.com/chiranthan123/displaylink-app/releases/download/v1.0.0/DisplayLink.apk)**
+   - Or browse releases on GitHub: [DisplayLink Releases (v1.0.0)](https://github.com/chiranthan123/displaylink-app/releases/tag/v1.0.0)
+2. **Install on Phone**:
+   - Tap the downloaded `DisplayLink.apk` file on your phone.
+   - If prompted, allow your mobile browser or file manager to "Install unknown apps" in device settings.
+   - Launch **DisplayLink**.
+3. **Connect & Stream**:
+   - Plug your phone into your PC with a USB cable.
+   - Run the host streamer on your PC:
+     ```bash
+     python host_streamer.py --aoa
+     ```
+   - When the USB Accessory popup appears on your phone screen, tap **OK** or check **Always allow** to start mirroring in real time!
+
+---
+
 ## 🖥️ Host Screen Streamer (`host_streamer.py`)
 
 A dedicated Python streamer that captures the primary desktop display at 30 FPS, performs the AOA protocol handshake over USB, and streams raw Annex-B H.264 NAL units in real-time.
