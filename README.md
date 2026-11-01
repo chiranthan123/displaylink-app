@@ -8,6 +8,27 @@ A complete, high-performance display mirroring solution comprising:
 
 ## 📱 Downloading & Installing the Android APK
 
+A pre-built, ready-to-run APK is built and published automatically on every push via GitHub Actions CI/CD:
+
+1. **Direct Download**:
+   - Download the APK directly to your phone: **[Download DisplayLink.apk (v1.0.0)](https://github.com/chiranthan123/displaylink-app/releases/download/v1.0.0/DisplayLink.apk)**
+   - Alternatively, browse the latest release page on GitHub: [DisplayLink Releases](https://github.com/chiranthan123/displaylink-app/releases/tag/v1.0.0)
+2. **Install on Phone**:
+   - Tap the downloaded `DisplayLink.apk` file on your device.
+   - If prompted, allow your mobile browser or file manager to "Install unknown apps" from device settings.
+   - Complete installation and launch **DisplayLink**.
+3. **Connect & Stream**:
+   - Plug your phone into your PC with a USB cable.
+   - Run the desktop streamer:
+     ```bash
+     python host_streamer.py --aoa
+     ```
+   - When the USB Accessory popup appears on your phone screen, tap **OK** or check **Always allow** to establish the mirror stream!
+
+---
+
+## 📱 Downloading & Installing the Android APK
+
 A pre-built, ready-to-run APK is compiled and published automatically via GitHub Actions CI/CD:
 
 1. **Direct Download**:
@@ -85,6 +106,27 @@ python host_streamer.py --stdout > stream.h264
 
 ---
 
+## 📱 Downloading & Installing the Android APK
+
+A pre-built, ready-to-run APK is built and published automatically on every push via GitHub Actions CI/CD:
+
+1. **Direct Download**:
+   - Download the APK directly to your phone: **[Download DisplayLink.apk (v1.0.0)](https://github.com/chiranthan123/displaylink-app/releases/download/v1.0.0/DisplayLink.apk)**
+   - Alternatively, browse the latest release page on GitHub: [DisplayLink Releases](https://github.com/chiranthan123/displaylink-app/releases/tag/v1.0.0)
+2. **Install on Phone**:
+   - Tap the downloaded `DisplayLink.apk` file on your device.
+   - If prompted, allow your mobile browser or file manager to "Install unknown apps" from device settings.
+   - Complete installation and launch **DisplayLink**.
+3. **Connect & Stream**:
+   - Plug your phone into your PC with a USB cable.
+   - Run the desktop streamer:
+     ```bash
+     python host_streamer.py --aoa
+     ```
+   - When the USB Accessory popup appears on your phone screen, tap **OK** or check **Always allow** to establish the mirror stream!
+
+---
+
 ## 📱 Android Client Features
 
 - **Bi-Directional Stream Health & Telemetry Feedback ([`H264Decoder.kt`](file:///c:/Users/Admin/Desktop/tempfile/app/src/main/java/com/displaylink/app/video/H264Decoder.kt) & [`AoaManager.kt`](file:///c:/Users/Admin/Desktop/tempfile/app/src/main/java/com/displaylink/app/aoa/AoaManager.kt))**:
@@ -121,6 +163,27 @@ python host_streamer.py --stdout > stream.h264
   - Simulates physical docking, permission grant/denial, abrupt cable detachment, and unexpected file descriptor closure without physical hardware.
   - Reactive health telemetry (`AoaHealthReport`) and live event log stream.
   - Interactive simulation triggers embedded directly in `SettingsSheet.kt` for developers and QA engineers.
+
+---
+
+## 📱 Downloading & Installing the Android APK
+
+A pre-built, ready-to-run APK is built and published automatically on every push via GitHub Actions CI/CD:
+
+1. **Direct Download**:
+   - Download the APK directly to your phone: **[Download DisplayLink.apk (v1.0.0)](https://github.com/chiranthan123/displaylink-app/releases/download/v1.0.0/DisplayLink.apk)**
+   - Alternatively, browse the latest release page on GitHub: [DisplayLink Releases](https://github.com/chiranthan123/displaylink-app/releases/tag/v1.0.0)
+2. **Install on Phone**:
+   - Tap the downloaded `DisplayLink.apk` file on your device.
+   - If prompted, allow your mobile browser or file manager to "Install unknown apps" from device settings.
+   - Complete installation and launch **DisplayLink**.
+3. **Connect & Stream**:
+   - Plug your phone into your PC with a USB cable.
+   - Run the desktop streamer:
+     ```bash
+     python host_streamer.py --aoa
+     ```
+   - When the USB Accessory popup appears on your phone screen, tap **OK** or check **Always allow** to establish the mirror stream!
 
 ---
 
@@ -184,6 +247,27 @@ DisplayLink/
 ├── settings.gradle.kts            # Project settings & repositories
 └── gradlew / gradlew.bat          # Gradle wrappers for Windows & POSIX
 ```
+
+---
+
+## 📱 Downloading & Installing the Android APK
+
+A pre-built, ready-to-run APK is built and published automatically on every push via GitHub Actions CI/CD:
+
+1. **Direct Download**:
+   - Download the APK directly to your phone: **[Download DisplayLink.apk (v1.0.0)](https://github.com/chiranthan123/displaylink-app/releases/download/v1.0.0/DisplayLink.apk)**
+   - Alternatively, browse the latest release page on GitHub: [DisplayLink Releases](https://github.com/chiranthan123/displaylink-app/releases/tag/v1.0.0)
+2. **Install on Phone**:
+   - Tap the downloaded `DisplayLink.apk` file on your device.
+   - If prompted, allow your mobile browser or file manager to "Install unknown apps" from device settings.
+   - Complete installation and launch **DisplayLink**.
+3. **Connect & Stream**:
+   - Plug your phone into your PC with a USB cable.
+   - Run the desktop streamer:
+     ```bash
+     python host_streamer.py --aoa
+     ```
+   - When the USB Accessory popup appears on your phone screen, tap **OK** or check **Always allow** to establish the mirror stream!
 
 ---
 
