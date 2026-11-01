@@ -18,6 +18,7 @@ Optimized for lower-end hardware (Intel Core i3-3210 dual-core CPU & NVIDIA GT 6
 
 import sys
 import os
+import shutil
 import time
 import queue
 import json
@@ -437,6 +438,18 @@ class HostStreamer:
         self.fps = fps
         self.crf = crf
         self.threads = threads
+
+        if ffmpeg_bin == "ffmpeg" and shutil.which("ffmpeg") is None:
+            local_bin = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ffmpeg.exe")
+            if os.path.exists(local_bin):
+                ffmpeg_bin = local_bin
+            else:
+                try:
+                    import imageio_ffmpeg
+                    ffmpeg_bin = imageio_ffmpeg.get_ffmpeg_exe()
+                except Exception:
+                    pass
+
         self.ffmpeg_bin = ffmpeg_bin
         self.pipe_to_stdout = pipe_to_stdout
         self.aoa_dev = aoa_dev

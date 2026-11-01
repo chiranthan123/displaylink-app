@@ -20,4 +20,6 @@ local.properties
 __pycache__/
 *.pyc
 platform-tools/
+ffmpeg.exe
+DisplayLink.apk
 
